@@ -1,0 +1,73 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+source = 'release'
+build = 'coc#util#install()'
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+
+[[plugins]]
+repo = 'nanotech/jellybeans.vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+  nnoremap <leader>n :NERDTreeFocus<CR>
+  nnoremap <C-n> :NERDTreeToggle<CR>
+  nnoremap <C-f> :NERDTreeFind<CR>
+'''
+
+[[plugins]]
+repo = 'chriskempson/base16-vim'
+
+[[plugins]]
+repo = 'prettier/vim-prettier'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'tpope/vim-endwise'
+
+[[plugins]]
+repo = 'Townk/vim-autoclose'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add = '''
+  set signcolumn=yes
+  set updatetime=1000
+  nnoremap [gitgutter] <Nop>
+  nmap <C-h> [gitgutter]
+  nmap [gitgutter]j <Plug>GitGutterNextHunk
+  nmap [gitgutter]k <Plug>GitGutterPrevHunk
+  nmap [gitgutter]u <Plug>GitGutterUndoHunk
+'''
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+hook_add = '''
+  command Gst :Gstatus
+  command Gdf :Gdiff
+  command Gbl :Gblame
+'''
+
+[[plugins]]
+repo = 'tpope/vim-commentary'
+repo = 'tpope/vim-surround'
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+repo = 'tpope/vim-repeat'
+repo = 'junegunn/vim-easy-align'
+repo = 'ervandew/supertab'
+repo = 'jiangmiao/auto-pairs'
+repo = 'jacquesbh/vim-showmarks'
+repo = 'dhruvasagar/vim-table-mode'
+repo = 'alvan/vim-closetag'
+
