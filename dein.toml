@@ -39,6 +39,9 @@ repo = 'tpope/vim-endwise'
 repo = 'Townk/vim-autoclose'
 
 [[plugins]]
+repo = 'tpope/vim-commentary'
+
+[[plugins]]
 repo = 'airblade/vim-gitgutter'
 hook_add = '''
   set signcolumn=yes
@@ -59,15 +62,31 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'tpope/vim-commentary'
 repo = 'tpope/vim-surround'
+
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
+
+[[plugins]]
 repo = 'tpope/vim-repeat'
+
+[[plugins]]
 repo = 'junegunn/vim-easy-align'
-repo = 'ervandew/supertab'
+
+[[plugins]]
 repo = 'jiangmiao/auto-pairs'
+
+[[plugins]]
 repo = 'jacquesbh/vim-showmarks'
+
+[[plugins]]
 repo = 'dhruvasagar/vim-table-mode'
+
+[[plugins]]
 repo = 'alvan/vim-closetag'
 
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'

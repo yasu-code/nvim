@@ -64,12 +64,17 @@ set t_ut=
 inoremap <silent> jk <ESC>
 " バックスペースの挙動を通常と同じにする
 set backspace=2
-
+" スペルチェック
+set spell
+set spelllang=en,cjk
+autocmd ColorScheme * hi clear SpellBad
+    \| hi SpellBad cterm=underline ctermbg=black
+colorscheme ron
 " insertモードでの移動コマンド
-" inoremap <C-d> <BS>
-" inoremap <C-l> <Right>
-" inoremap <C-k> <Up>                          
-" inoremap <C-j> <Down>
+inoremap <C-d> <BS>
+inoremap <C-l> <Right>
+inoremap <C-k> <Up>                          
+inoremap <C-j> <Down>
 
 " 見た目系
 " 行番号を表示
@@ -178,7 +183,6 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
@@ -189,7 +193,7 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Or use `complete_info` if your vim support it, like:
 " inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
@@ -216,6 +220,8 @@ endfunction
 
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
+highlight CocErrorSign ctermfg=15 ctermbg=196
+highlight CocWarningSign ctermfg=0 ctermbg=172
 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
@@ -249,8 +255,8 @@ omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
 
 " Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-nmap <silent> <C-d> <Plug>(coc-range-select)
-xmap <silent> <C-d> <Plug>(coc-range-select)
+" nmap <silent> <C-d> <Plug>(coc-range-select)
+" xmap <silent> <C-d> <Plug>(coc-range-select)
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
@@ -286,3 +292,33 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 if dein#check_install()                                       
   call dein#install()      
 endif                                                             
+
+" formatの設定
+nnoremap = :CocCommand prettier.formatFile<CR>
+
+let g:coc_global_extensions = [
+      \'coc-actions',
+      \'coc-cspell-dicts', 
+      \'coc-dictionary', 
+      \'coc-eslint', 
+      \'coc-floaterm', 
+      \'coc-git', 
+      \'coc-highlight',
+      \'coc-jedi', 
+      \'coc-json', 
+      \'coc-lists', 
+      \'coc-markdownlint', 
+      \'coc-metals', 
+      \'coc-pairs', 
+      \'coc-prettier', 
+      \'coc-snippets', 
+      \'coc-spell-checker', 
+      \'coc-tslint-plugin', 
+      \'coc-tsserver', 
+      \'coc-ultisnips', 
+      \'coc-yaml',
+      \'coc-python',
+      \'coc-sql',
+      \'coc-toml',
+      \'coc-html'
+\]
