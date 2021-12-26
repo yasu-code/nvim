@@ -303,7 +303,6 @@ let g:coc_global_extensions = [
       \'coc-floaterm', 
       \'coc-git', 
       \'coc-highlight',
-      \'coc-jedi', 
       \'coc-json', 
       \'coc-lists', 
       \'coc-markdownlint', 
@@ -316,7 +315,7 @@ let g:coc_global_extensions = [
       \'coc-tsserver', 
       \'coc-ultisnips', 
       \'coc-yaml',
-      \'coc-python',
+      \'coc-pyright',
       \'coc-sql',
       \'coc-toml',
       \'coc-html'
