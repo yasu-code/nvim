@@ -24,5 +24,6 @@
             }
         }
     },
-    "coc.source.ultisnips.filetypes": ["tex"]
+    "coc.source.ultisnips.filetypes": ["tex"],
+    "prettier.tabWidth":4
 }

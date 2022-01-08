@@ -13,6 +13,9 @@ build = 'coc#util#install()'
 repo = 'nathanaelkane/vim-indent-guides'
 
 [[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
 repo = 'nanotech/jellybeans.vim'
 
 [[plugins]]
