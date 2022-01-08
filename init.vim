@@ -295,6 +295,8 @@ endif
 " formatの設定
 nnoremap = :CocCommand prettier.formatFile<CR>
 
+let g:blamer_enabled = 1
+
 let g:coc_global_extensions = [
       \'coc-actions',
       \'coc-cspell-dicts', 
