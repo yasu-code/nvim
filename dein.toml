@@ -6,14 +6,10 @@ repo = 'Shougo/unite.vim'
 
 [[plugins]]
 repo = 'neoclide/coc.nvim'
-source = 'release'
 build = 'coc#util#install()'
 
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
-
-[[plugins]]
-repo = 'tpope/vim-surround'
 
 [[plugins]]
 repo = 'nanotech/jellybeans.vim'
@@ -27,7 +23,7 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'chriskempson/base16-vim'
+repo = 'jacoborus/tender.vim'
 
 [[plugins]]
 repo = 'prettier/vim-prettier'

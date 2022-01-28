@@ -58,7 +58,6 @@ set showcmd
 set clipboard+=unnamed
 " 選択時にクリップボードに入る
 " set guioptions+=a
-colorscheme desert
 set t_ut=
 " etcをjkにする
 inoremap <silent> jk <ESC>
@@ -67,9 +66,6 @@ set backspace=2
 " スペルチェック
 set spell
 set spelllang=en,cjk
-autocmd ColorScheme * hi clear SpellBad
-    \| hi SpellBad cterm=underline ctermbg=black
-colorscheme ron
 " insertモードでの移動コマンド
 inoremap <C-d> <BS>
 inoremap <C-l> <Right>
@@ -296,6 +292,8 @@ endif
 nnoremap = :CocCommand prettier.formatFile<CR>
 
 let g:blamer_enabled = 1
+let g:indent_guides_enable_on_vim_startup = 1
+
 
 let g:coc_global_extensions = [
       \'coc-actions',
@@ -322,3 +320,13 @@ let g:coc_global_extensions = [
       \'coc-toml',
       \'coc-html'
 \]
+
+"tender settings
+if (has("termguicolors"))
+    set termguicolors
+endif                                                                              
+let g:cpp_class_scope_highlight = 1                                                
+syntax enable
+colorscheme tender 
+let g:lightline = { 'colorscheme': 'tender' }
+let g:airline_theme = 'tender'
