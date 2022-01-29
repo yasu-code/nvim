@@ -29,11 +29,11 @@ syntax enable
 "if dein#check_install()
 "  call dein#install()
 "endif
-
 "End dein Scripts-------------------------
+"
 " 全般
 " タブを何文字の空白に変換するか
-set tabstop=2
+set tabstop=4
 " 自動インデント時に入力する空白の数
 set shiftwidth=4
 " タブ入力を空白に変換
@@ -59,8 +59,6 @@ set clipboard+=unnamed
 " 選択時にクリップボードに入る
 " set guioptions+=a
 set t_ut=
-" etcをjkにする
-inoremap <silent> jk <ESC>
 " バックスペースの挙動を通常と同じにする
 set backspace=2
 " スペルチェック
@@ -175,9 +173,9 @@ set signcolumn=yes
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -283,50 +281,38 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
-" If you want to install not installed plugins on startup.    
-if dein#check_install()                                       
-  call dein#install()      
-endif                                                             
 
 " formatの設定
 nnoremap = :CocCommand prettier.formatFile<CR>
 
-let g:blamer_enabled = 1
-let g:indent_guides_enable_on_vim_startup = 1
-
-
 let g:coc_global_extensions = [
-      \'coc-actions',
-      \'coc-cspell-dicts', 
-      \'coc-dictionary', 
-      \'coc-eslint', 
-      \'coc-floaterm', 
-      \'coc-git', 
-      \'coc-highlight',
-      \'coc-json', 
-      \'coc-lists', 
-      \'coc-markdownlint', 
-      \'coc-metals', 
-      \'coc-pairs', 
-      \'coc-prettier', 
-      \'coc-snippets', 
-      \'coc-spell-checker', 
-      \'coc-tslint-plugin', 
-      \'coc-tsserver', 
-      \'coc-ultisnips', 
-      \'coc-yaml',
-      \'coc-pyright',
-      \'coc-sql',
-      \'coc-toml',
-      \'coc-html'
+    \'coc-actions',
+    \'coc-cspell-dicts', 
+    \'coc-dictionary', 
+    \'coc-eslint', 
+    \'coc-floaterm', 
+    \'coc-git', 
+    \'coc-highlight',
+    \'coc-json', 
+    \'coc-lists', 
+    \'coc-markdownlint', 
+    \'coc-metals', 
+    \'coc-pairs', 
+    \'coc-prettier', 
+    \'coc-snippets', 
+    \'coc-spell-checker', 
+    \'coc-tslint-plugin', 
+    \'coc-tsserver', 
+    \'coc-ultisnips', 
+    \'coc-yaml',
+    \'coc-pyright',
+    \'coc-sql',
+    \'coc-toml',
+    \'coc-html'
 \]
 
-"tender settings
-if (has("termguicolors"))
-    set termguicolors
-endif                                                                              
-let g:cpp_class_scope_highlight = 1                                                
-syntax enable
-colorscheme tender 
-let g:lightline = { 'colorscheme': 'tender' }
-let g:airline_theme = 'tender'
+
+" If you want to install not installed plugins on startup.    
+if dein#check_install()                                       
+  call dein#install()      
+endif                                                             

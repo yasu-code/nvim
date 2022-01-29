@@ -2,17 +2,14 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'Shougo/unite.vim'
-
-[[plugins]]
 repo = 'neoclide/coc.nvim'
 build = 'coc#util#install()'
 
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
-
-[[plugins]]
-repo = 'nanotech/jellybeans.vim'
+hook_add = '''
+    let g:indent_guides_enable_on_vim_startup = 1
+'''
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
@@ -24,12 +21,17 @@ hook_add = '''
 
 [[plugins]]
 repo = 'jacoborus/tender.vim'
-
-[[plugins]]
-repo = 'prettier/vim-prettier'
-
-[[plugins]]
-repo = 'itchyny/lightline.vim'
+hook_add = '''
+    "tender settings
+    if (has("termguicolors"))
+        set termguicolors
+    endif                                                                              
+    let g:cpp_class_scope_highlight = 1                                                
+    syntax enable
+    colorscheme tender 
+    let g:lightline = { 'colorscheme': 'tender' }
+    let g:airline_theme = 'tender'
+'''
 
 [[plugins]]
 repo = 'tpope/vim-endwise'
@@ -73,22 +75,29 @@ repo = 'tpope/vim-repeat'
 repo = 'junegunn/vim-easy-align'
 
 [[plugins]]
-repo = 'jiangmiao/auto-pairs'
-
-[[plugins]]
 repo = 'jacquesbh/vim-showmarks'
-
-[[plugins]]
-repo = 'dhruvasagar/vim-table-mode'
 
 [[plugins]]
 repo = 'alvan/vim-closetag'
 
 [[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+[[plugins]]
 repo = 'vim-airline/vim-airline'
+hook_add = '''
+    let g:airline_theme = 'cobalt2'
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#left_sep = ' '
+    let g:airline#extensions#tabline#left_alt_sep = '|'
+'''
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
 repo = 'APZelos/blamer.nvim'
+hook_add = '''
+    let g:blamer_enabled = 1
+    let g:blamer_delay = 1000
+'''
