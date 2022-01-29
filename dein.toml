@@ -75,10 +75,10 @@ repo = 'tpope/vim-repeat'
 repo = 'junegunn/vim-easy-align'
 
 [[plugins]]
-repo = 'jacquesbh/vim-showmarks'
-
-[[plugins]]
 repo = 'alvan/vim-closetag'
+hook_add = '''
+    let g:closetag_filenames = '*.html, *.js, *.jsx, *.php, *.tpl'
+'''
 
 [[plugins]]
 repo = 'jiangmiao/auto-pairs'
