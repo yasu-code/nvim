@@ -101,3 +101,12 @@ hook_add = '''
     let g:blamer_enabled = 1
     let g:blamer_delay = 1000
 '''
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+
+[[plugins]]
+repo = 'junegunn/fzf'
