@@ -21,17 +21,6 @@ hook_add = '''
 
 [[plugins]]
 repo = 'jacoborus/tender.vim'
-hook_add = '''
-    "tender settings
-    if (has("termguicolors"))
-        set termguicolors
-    endif                                                                              
-    let g:cpp_class_scope_highlight = 1                                                
-    syntax enable
-    colorscheme tender 
-    let g:lightline = { 'colorscheme': 'tender' }
-    let g:airline_theme = 'tender'
-'''
 
 [[plugins]]
 repo = 'tpope/vim-endwise'
@@ -86,10 +75,12 @@ repo = 'jiangmiao/auto-pairs'
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 hook_add = '''
+    set laststatus=2
     let g:airline_theme = 'cobalt2'
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#left_sep = ' '
     let g:airline#extensions#tabline#left_alt_sep = '|'
+    let g:airline_powerline_fonts = 1
 '''
 
 [[plugins]]
@@ -106,7 +97,10 @@ hook_add = '''
 repo = 'ryanoasis/vim-devicons'
 
 [[plugins]]
+repo = 'junegunn/fzf'
+
+[[plugins]]
 repo = 'junegunn/fzf.vim'
 
 [[plugins]]
-repo = 'junegunn/fzf'
+repo = 'yuki-yano/fzf-preview.vim'

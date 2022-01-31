@@ -23,7 +23,6 @@ call dein#end()
 
 " Required:
 filetype plugin indent on
-syntax enable
 
 " If you want to install not installed plugins on startup.
 "if dein#check_install()
@@ -98,8 +97,6 @@ set wildmode=list:longest
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
-" シンタックスハイライトの有効化
-syntax enable
 " インデントを現在の行と合わせる
 " 通常文字列の文字色を黄色にする
 hi Constant ctermfg=14
@@ -311,6 +308,16 @@ let g:coc_global_extensions = [
     \'coc-html'
 \]
 
+
+"tender settings
+if (has("termguicolors"))
+    set termguicolors
+endif
+let g:cpp_class_scope_highlight = 1
+syntax enable
+colorscheme tender
+let g:lightline = { 'colorscheme': 'tender' }
+let g:airline_theme = 'tender'
 
 " If you want to install not installed plugins on startup.    
 if dein#check_install()                                       
