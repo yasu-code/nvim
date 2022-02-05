@@ -308,9 +308,9 @@ let g:coc_global_extensions = [
 
 
 "tender settings
-" if (has("termguicolors"))
-"     set termguicolors
-" endif
+if (has("termguicolors"))
+    set termguicolors
+endif
 let g:cpp_class_scope_highlight = 1
 syntax enable
 colorscheme tender
@@ -318,6 +318,7 @@ colorscheme tender
 set hlsearch
 hi Search ctermbg=grey
 hi Search ctermfg=white
+highlight Search gui=reverse
 let g:lightline = { 'colorscheme': 'tender' }
 let g:airline_theme = 'tender'
 
