@@ -112,8 +112,6 @@ set smartcase
 set incsearch
 " 検索時に最後まで行ったら最初に戻る
 set wrapscan
-" 検索語をハイライト表示
-set hlsearch
 " ESC連打でハイライト解除
 nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 "半角文字の設定
@@ -310,12 +308,16 @@ let g:coc_global_extensions = [
 
 
 "tender settings
-if (has("termguicolors"))
-    set termguicolors
-endif
+" if (has("termguicolors"))
+"     set termguicolors
+" endif
 let g:cpp_class_scope_highlight = 1
 syntax enable
 colorscheme tender
+" 検索語をハイライト表示
+set hlsearch
+hi Search ctermbg=grey
+hi Search ctermfg=white
 let g:lightline = { 'colorscheme': 'tender' }
 let g:airline_theme = 'tender'
 
