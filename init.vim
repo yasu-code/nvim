@@ -316,8 +316,7 @@ syntax enable
 colorscheme tender
 " 検索語をハイライト表示
 set hlsearch
-hi Search ctermbg=grey
-hi Search ctermfg=white
+highlight Search guifg=grey
 highlight Search gui=reverse
 let g:lightline = { 'colorscheme': 'tender' }
 let g:airline_theme = 'tender'
