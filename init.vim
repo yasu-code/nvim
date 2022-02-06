@@ -115,9 +115,11 @@ set wrapscan
 " ESC連打でハイライト解除
 nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 "半角文字の設定
-set guifont=MS_Gothic:h10
+"set guifont=MS_Gothic:h10
 "全角文字の設定
-set guifontwide=MS_Gothic:h10
+"set guifontwide=MS_Gothic:h10
+" 検索語をハイライト表示
+set hlsearch
 
 " Pluginディレクトリのパス    
 let s:dein_dir = expand('~/.vim/dein')    
@@ -306,7 +308,6 @@ let g:coc_global_extensions = [
     \'coc-html'
 \]
 
-
 "tender settings
 if (has("termguicolors"))
     set termguicolors
@@ -314,8 +315,6 @@ endif
 let g:cpp_class_scope_highlight = 1
 syntax enable
 colorscheme tender
-" 検索語をハイライト表示
-set hlsearch
 highlight Search guifg=grey
 highlight Search gui=reverse
 let g:lightline = { 'colorscheme': 'tender' }
