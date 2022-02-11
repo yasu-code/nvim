@@ -56,7 +56,14 @@ set showcmd
 " クリップボードの共有
 set clipboard+=unnamed
 " 選択時にクリップボードに入る
-" set guioptions+=a
+set guioptions+=a
+" windowsの設定
+if system('uname -a | grep microsoft') != ''
+  augroup myYank
+    autocmd!
+    autocmd TextYankPost * :call system('clip.exe', @")
+  augroup END
+endif
 set t_ut=
 " バックスペースの挙動を通常と同じにする
 set backspace=2
