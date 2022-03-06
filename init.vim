@@ -331,3 +331,9 @@ let g:airline_theme = 'tender'
 if dein#check_install()                                       
   call dein#install()      
 endif                                                             
+
+" fzf settings
+let $FZF_DEFAULT_OPTS="--layout=reverse"
+let $FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/**'"
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
+let mapleader = "\<Space>"

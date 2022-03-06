@@ -98,9 +98,11 @@ repo = 'ryanoasis/vim-devicons'
 
 [[plugins]]
 repo = 'junegunn/fzf'
+build = './install --bin'
 
 [[plugins]]
 repo = 'junegunn/fzf.vim'
+depends = 'fzf'
 
-[[plugins]]
-repo = 'yuki-yano/fzf-preview.vim'
+# [[plugins]]
+# repo = 'yuki-yano/fzf-preview.vim'
