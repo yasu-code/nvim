@@ -103,10 +103,6 @@ build = './install --bin'
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
-hook_add = '''
-    command GF :GFiles
-    command GF? :GFiles?
-'''
 
-# [[plugins]]
-# repo = 'yuki-yano/fzf-preview.vim'
+[[plugins]]
+repo = 'heavenshell/vim-jsdoc'
