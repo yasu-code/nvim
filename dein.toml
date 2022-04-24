@@ -106,3 +106,6 @@ depends = 'fzf'
 
 [[plugins]]
 repo = 'heavenshell/vim-jsdoc'
+hook_add = '''
+    let g:jsdoc_lehre_path = '~/.config/yarn/global/node_modules/lehre/bin/lehre'
+'''
