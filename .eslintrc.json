@@ -1,0 +1,45 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "rules": {
+        "no-useless-rename": "warn",
+        "semi": "warn",
+        "quotes": "warn",
+        "require-jsdoc": "warn",
+        "sort-vars": "warn",
+        "space-before-blocks": "warn",
+        "space-before-function-paren": "warn",
+        "space-in-parens": "warn",
+        "spaced-comment": "warn",
+        "block-spacing": "warn",
+        "camelcase": "warn",
+        "comma-dangle": "warn",
+        "comma-spacing": "warn",
+        "eol-last": "warn",
+        "func-call-spacing": "warn",
+        "id-length": "warn",
+        "indent": "warn",
+        "keyword-spacing": "warn",
+        "max-depth": "warn",
+        "newline-per-chained-call": "warn",
+        "no-inline-comments": "warn",
+        "no-lonely-if": "warn",
+        "no-multiple-empty-lines": "warn",
+        "no-negated-condition": "warn",
+        "no-nested-ternary": "warn",
+        "no-trailing-spaces": "warn",
+        "react/prop-types": "off",
+        "react/react-in-jsx-scope": "off"
+    }
+}

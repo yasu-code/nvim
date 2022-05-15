@@ -25,5 +25,13 @@
         }
     },
     "coc.source.ultisnips.filetypes": ["tex"],
-    "prettier.tabWidth":4
-}
+    "prettier.tabWidth":4,
+    "eslint.alwaysShowStatus":true,
+    "eslint.filetypes": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+    ],
+    "eslint.useESLintClass": true
+    }
