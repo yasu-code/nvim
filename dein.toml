@@ -46,9 +46,13 @@ hook_add = '''
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 hook_add = '''
-  command Gs :Git status
-  command Gd :Git diff
-  command Gb :Git blame
+  nnoremap <leader>gs :Git<CR>
+  nnoremap <leader>gd :Gdiff<CR>
+  nnoremap <leader>gl :Gclog<CR>
+  nnoremap <leader>gb :Git blame<CR>
+  nnoremap <leader>ga :Git add %:p<CR><CR>
+  nnoremap <leader>gc :Gcommit<CR><CR>
+  nnoremap <leader>gp :Gpush<CR>
 '''
 
 [[plugins]]
@@ -103,6 +107,13 @@ build = './install --bin'
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
+hook_add = '''
+    nnoremap <leader>ff :GFiles<CR>
+    nnoremap <leader>fgf :GFiles?<CR>
+    nnoremap <leader>fb :Buffers<CR>
+    nnoremap <leader>fh :History<CR>
+    nnoremap <leader>fr :Rg<CR>
+'''
 
 [[plugins]]
 repo = 'heavenshell/vim-jsdoc'

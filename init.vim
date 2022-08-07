@@ -294,7 +294,6 @@ let g:coc_global_extensions = [
     \'coc-cspell-dicts', 
     \'coc-dictionary', 
     \'coc-eslint', 
-    \'coc-floaterm', 
     \'coc-git', 
     \'coc-highlight',
     \'coc-json', 

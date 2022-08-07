@@ -33,5 +33,6 @@
         "typescript",
         "typescriptreact"
     ],
-    "eslint.useESLintClass": true
-    }
+    "eslint.useESLintClass":true,
+    "eslint.onIgnoredFiles":"warn"
+}
