@@ -325,7 +325,10 @@ highlight Search guifg=grey
 highlight Search gui=reverse
 let g:lightline = { 'colorscheme': 'tender' }
 let g:airline_theme = 'tender'
-
+"transparent
+highlight Normal guibg=NONE
+highlight NonText guibg=NONE
+highlight SignColumn guibg=NONE
 " If you want to install not installed plugins on startup.    
 if dein#check_install()                                       
   call dein#install()      
