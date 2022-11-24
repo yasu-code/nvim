@@ -127,6 +127,7 @@ nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 "set guifontwide=MS_Gothic:h10
 " 検索語をハイライト表示
 set hlsearch
+set mouse=
 
 " Pluginディレクトリのパス    
 let s:dein_dir = expand('~/.vim/dein')    
