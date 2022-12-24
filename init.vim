@@ -101,6 +101,8 @@ set statusline=%f
 set statusline+=[LOW=%l/%L]
 " コマンドラインの補完
 set wildmode=list:longest
+" 保存されていない場合に確認する
+set confirm
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
@@ -285,6 +287,8 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+" 分割ウィンドウの移動
+nnoremap <Return><Return> <c-w><c-w>
 
 
 " formatの設定
