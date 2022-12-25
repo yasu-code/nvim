@@ -112,6 +112,7 @@ hook_add = '''
     nnoremap <leader>fgf :GFiles?<CR>
     nnoremap <leader>fb :Buffers<CR>
     nnoremap <leader>fh :History<CR>
+    nnoremap <leader>fw :Windows<CR>
     nnoremap <leader>fr :Rg<CR>
 '''
 
