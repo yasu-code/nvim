@@ -57,6 +57,7 @@
         "no-trailing-spaces": "warn",
         "prefer-const": "warn",
         "no-const-assign": "warn",
+        "max-len": ["warn", { "code": 80 }],
         "react/prop-types": "off",
         "react/react-in-jsx-scope": "off",
         "react/jsx-uses-react": "error",
