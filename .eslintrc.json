@@ -1,20 +1,37 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true,
-        "node": true
-    },
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended"
     ],
+    "plugins": [
+        "react"
+    ],
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+    },
     "parserOptions": {
-        "ecmaVersion": 12,
-        "sourceType": "module"
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "jsx": true
+        },
+        "sourceType": "module",
+        "ecmaVersion": 2019
     },
     "rules": {
+        "semi": ["warn", "always"],
+        "indent": [
+            "warn",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "arrow-spacing": "warn",
+        "no-var": "warn",
         "no-useless-rename": "warn",
-        "semi": "warn",
+        "no-console": "warn",
         "quotes": "warn",
         "require-jsdoc": "warn",
         "sort-vars": "warn",
@@ -23,13 +40,12 @@
         "space-in-parens": "warn",
         "spaced-comment": "warn",
         "block-spacing": "warn",
-        "camelcase": "warn",
+        "camelcase": "off",
         "comma-dangle": "warn",
         "comma-spacing": "warn",
         "eol-last": "warn",
         "func-call-spacing": "warn",
         "id-length": "warn",
-        "indent": "warn",
         "keyword-spacing": "warn",
         "max-depth": "warn",
         "newline-per-chained-call": "warn",
@@ -39,7 +55,34 @@
         "no-negated-condition": "warn",
         "no-nested-ternary": "warn",
         "no-trailing-spaces": "warn",
+        "prefer-const": "warn",
+        "no-const-assign": "warn",
         "react/prop-types": "off",
-        "react/react-in-jsx-scope": "off"
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error"
+    },
+    "settings": {
+        "react": {
+            "createClass": "createReactClass",
+            "pragma": "React",
+            "fragment": "Fragment",
+            "version": "detect",
+            "flowVersion": "0.53"
+        },
+        "propWrapperFunctions": [
+            "forbidExtraProps",
+            { "property": "freeze", "object": "Object" },
+            { "property": "myFavoriteWrapper" },
+            { "property": "forbidExtraProps", "exact": true }
+        ],
+        "componentWrapperFunctions": [
+            "observer",
+            { "property": "styled" },
+            { "property": "observer", "object": "Mobx" },
+            { "property": "observer", "object": "<pragma>" }
+        ],
+        "formComponents": ["CustomForm", { "name": "Form", "formAttribute": "endpoint" }],
+        "linkComponents": ["Hyperlink", { "name": "Link", "linkAttribute": "to" }]
     }
 }
