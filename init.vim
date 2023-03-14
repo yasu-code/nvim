@@ -1,34 +1,46 @@
 let mapleader = "\<SPACE>"
-"dein Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
+" Ward off unexpected things that your distro might have made, as
+" well as sanely reset options when re-sourcing .vimrc
+set nocompatible
 
-" Required:
-set runtimepath+=/Users/yasu/.vim/dein/repos/github.com/Shougo/dein.vim
+" Set Dein base path (required)
+let s:dein_base = '/Users/yasu/.cache/dein'
 
-" Required:
-call dein#begin('/Users/yasu/.vim/dein')
+" Set Dein source path (required)
+let s:dein_src = '/Users/yasu/.cache/dein/repos/github.com/Shougo/dein.vim'
 
-" Let dein manage dein
-" Required:
-call dein#add('/Users/yasu/.vim/dein/repos/github.com/Shougo/dein.vim')
+" Set Dein runtime path (required)
+execute 'set runtimepath+=' . s:dein_src
 
-" Add or remove your plugins here like this:
+" Call Dein initialization (required)
+call dein#begin(s:dein_base)
+
+call dein#add(s:dein_src)
+
+" Your plugins go here:
 "call dein#add('Shougo/neosnippet.vim')
 "call dein#add('Shougo/neosnippet-snippets')
 
-" Required:
+" Finish Dein initialization (required)
 call dein#end()
 
-" Required:
-filetype plugin indent on
+" Attempt to determine the type of a file based on its name and possibly its
+" contents. Use this to allow intelligent auto-indenting for each filetype,
+" and for plugins that are filetype specific.
+if has('filetype')
+  filetype indent plugin on
+endif
 
-" If you want to install not installed plugins on startup.
+" Enable syntax highlighting
+if has('syntax')
+  syntax on
+endif
+
+" Uncomment if you want to install not-installed plugins on startup.
 "if dein#check_install()
-"  call dein#install()
+" call dein#install()
 "endif
-"End dein Scripts-------------------------
+
 "
 " 全般
 " タブを何文字の空白に変換するか
