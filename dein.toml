@@ -125,3 +125,6 @@ hook_add = '''
 [[plugins]]
 repo = 'yasu-code/vim-chatgpt'
 rev = 'nvim-add-refactor'
+hook_add = '''
+    vnoremap <leader>rev :<C-u>Review<CR>
+'''
