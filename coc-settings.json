@@ -35,5 +35,12 @@
         "typescriptreact"
     ],
     "eslint.useESLintClass":true,
-    "eslint.onIgnoredFiles":"warn"
+    "eslint.onIgnoredFiles":"warn",
+    "snippets.ultisnips.pythonPrompt": false,
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportPossiblyUnboundVariable": "warning"
+    },
+    "pyright.inlayHints.functionReturnTypes":false,
+    "pyright.inlayHints.variableTypes": false,
+    "pyright.inlayHints.parameterTypes": false
 }

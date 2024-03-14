@@ -80,8 +80,8 @@ set t_ut=
 " バックスペースの挙動を通常と同じにする
 set backspace=2
 " スペルチェック
-set spell
-set spelllang=en,cjk
+" set spell
+" set spelllang=en,cjk
 " insertモードでの移動コマンド
 inoremap <C-d> <BS>
 inoremap <C-l> <Right>
