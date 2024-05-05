@@ -28,19 +28,12 @@
     "prettier.tabWidth":4,
     "prettier.printWidth":80,
     "eslint.alwaysShowStatus":true,
-    "eslint.filetypes": [
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact"
-    ],
     "eslint.useESLintClass":true,
     "eslint.onIgnoredFiles":"warn",
-    "snippets.ultisnips.pythonPrompt": false,
-    "python.analysis.diagnosticSeverityOverrides": {
-        "reportPossiblyUnboundVariable": "warning"
-    },
-    "pyright.inlayHints.functionReturnTypes":false,
-    "pyright.inlayHints.variableTypes": false,
-    "pyright.inlayHints.parameterTypes": false
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportPossiblyUnboundVariable": "warning"
+    },
+    "pyright.inlayHints.functionReturnTypes":false,
+    "pyright.inlayHints.variableTypes": false,
+    "pyright.inlayHints.parameterTypes": false
 }

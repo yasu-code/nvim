@@ -23,6 +23,9 @@ hook_add = '''
 repo = 'jacoborus/tender.vim'
 
 [[plugins]]
+repo = 'sainnhe/everforest'
+
+[[plugins]]
 repo = 'tpope/vim-endwise'
 
 [[plugins]]
@@ -146,6 +149,10 @@ repo = 'nvim-tree/nvim-web-devicons'
 repo = 'romgrk/barbar.nvim'
 hook_add = '''
     nnoremap <leader>bn :BufferNext<CR>
+    nnoremap <leader>bp :BufferPrevious<CR>
     nnoremap <leader>bc :BufferClose<CR>
     nnoremap <leader>br :BufferRestore<CR>
 '''
+
+[[plugins]]
+repo = 'norcalli/nvim-colorizer.lua'
