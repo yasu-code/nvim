@@ -1,0 +1,241 @@
+return {
+    {
+        "preservim/nerdtree",
+        keys = {
+            { "<leader>n", "<cmd>NERDTreeFocus<CR>", desc = "Focus NERDTree" },
+            { "<C-n>", "<cmd>NERDTreeToggle<CR>", desc = "Toggle NERDTree" },
+            { "<C-f>", "<cmd>NERDTreeFind<CR>", desc = "Find in NERDTree" },
+        },
+    },
+    {
+        "nathanaelkane/vim-indent-guides",
+        init = function()
+            vim.g.indent_guides_enable_on_vim_startup = 1
+        end,
+    },
+    -- Tender theme
+    {
+        "jacoborus/tender.vim",
+        config = function()
+            vim.cmd("colorscheme tender")
+	    -- Set termguicolors if available
+            if vim.fn.has("termguicolors") == 1 then
+                vim.opt.termguicolors = true
+            end
+
+            -- Highlight settings for C++ class scope
+            vim.g.cpp_class_scope_highlight = 1
+
+            -- Enable syntax and set colorscheme
+            vim.cmd("syntax enable")
+            vim.cmd("colorscheme tender")
+
+            -- Custom highlights
+            vim.api.nvim_set_hl(0, "Search", { fg = "grey", reverse = true })
+            vim.api.nvim_set_hl(0, "Normal", { fg = "NONE" })
+            vim.api.nvim_set_hl(0, "NonText", { fg = "NONE" })
+            vim.api.nvim_set_hl(0, "SignColumn", { fg = "NONE" })
+
+            -- Lightline and Airline theme
+            vim.g.lightline = { colorscheme = "tender" }
+            vim.g.airline_theme = "tender"
+        end
+    },
+
+    -- Everforest theme
+    {
+        "sainnhe/everforest"
+    },
+
+    -- vim-endwise
+    {
+        "tpope/vim-endwise"
+    },
+
+    -- vim-autoclose
+    {
+        "Townk/vim-autoclose"
+    },
+
+    -- vim-commentary
+    {
+        "tpope/vim-commentary"
+    },
+
+    -- vim-gitgutter
+    {
+        "airblade/vim-gitgutter",
+        config = function()
+            vim.opt.signcolumn = "yes"
+            vim.opt.updatetime = 1000
+
+            -- Key mappings
+            vim.api.nvim_set_keymap("n", "<C-g>", "<Plug>(gitgutter)", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "[gitgutter]n", ":GitGutterNextHunk<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "[gitgutter]p", ":GitGutterPrevHunk<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "[gitgutter]u", ":GitGutterUndoHunk<CR>", { noremap = true, silent = true })
+        end
+    },
+
+    -- vim-fugitive
+    {
+        "tpope/vim-fugitive",
+        config = function()
+            vim.api.nvim_set_keymap("n", "<leader>gs", ":Git<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "<leader>gd", ":Gdiff<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "<leader>gl", ":Gclog<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "<leader>gb", ":Git blame<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "<leader>ga", ":Git add %:p<CR><CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "<leader>gc", ":Gcommit<CR><CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "<leader>gp", ":Gpush<CR>", { noremap = true, silent = true })
+        end
+    },
+
+    -- vim-surround
+    {
+        "tpope/vim-surround"
+    },
+
+    -- hop.nvim
+    {
+        "phaazon/hop.nvim",
+        branch = "v2",
+        config = function()
+            require("hop").setup {
+                multi_windows = true,
+            }
+            -- Key mappings
+            vim.api.nvim_set_keymap("n", "<Leader><Leader>w", ":HopWord<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "<Leader><Leader>l", ":HopLine<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "<Leader><Leader>f", ":HopChar1<CR>", { noremap = true, silent = true })
+        end
+    },
+
+    -- vim-repeat
+    {
+        "tpope/vim-repeat"
+    },
+
+    -- vim-easy-align
+    {
+        "junegunn/vim-easy-align"
+    },
+
+    -- vim-closetag
+    {
+        "alvan/vim-closetag",
+        config = function()
+            vim.g.closetag_filenames = "*.html, *.js, *.jsx, *.php, *.tpl *.py"
+        end
+    },
+
+    -- auto-pairs
+    {
+        "jiangmiao/auto-pairs"
+    },
+
+    -- vim-airline
+    {
+        "vim-airline/vim-airline",
+        config = function()
+            vim.opt.laststatus = 2
+            vim.g.airline_theme = "cobalt2"
+            vim.g.airline_extensions_tabline_enabled = 1
+            vim.g.airline_extensions_tabline_left_sep = " "
+            vim.g.airline_extensions_tabline_left_alt_sep = "|"
+            vim.g.airline_powerline_fonts = 1
+        end
+    },
+
+    -- vim-airline-themes
+    {
+        "vim-airline/vim-airline-themes"
+    },
+
+    -- blamer.nvim
+    {
+        "APZelos/blamer.nvim",
+        config = function()
+            vim.g.blamer_enabled = 1
+            vim.g.blamer_delay = 1000
+        end
+    },
+
+    -- vim-devicons
+    {
+        "ryanoasis/vim-devicons"
+    },
+
+    -- fzf
+    {
+        "junegunn/fzf",
+        build = "./install --bin"
+    },
+
+    -- fzf.vim
+    {
+        "junegunn/fzf.vim",
+        depends = "fzf",
+        config = function()
+            vim.api.nvim_set_keymap("n", "<leader>ff", ":GFiles<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "<leader>fgf", ":GFiles?<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "<leader>fb", ":Buffers<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "<leader>fh", ":History<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "<leader>fw", ":Windows<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "<leader>fr", ":Rg<CR>", { noremap = true, silent = true })
+	    -- Set FZF options
+            vim.env.FZF_DEFAULT_OPTS = "--layout=reverse"
+            vim.env.FZF_DEFAULT_COMMAND = "rg --files --hidden --glob '!.git/**'"
+
+            -- Configure FZF layout
+            vim.g.fzf_layout = {
+                up = '~90%',
+                window = {
+                    width = 0.8,
+                    height = 0.8,
+                    yoffset = 0.5,
+                    xoffset = 0.5,
+                    border = 'sharp'
+                }
+            }
+        end
+    },
+
+    -- vim-jsdoc
+    {
+        "heavenshell/vim-jsdoc",
+        config = function()
+            vim.g.jsdoc_lehre_path = "~/.config/yarn/global/node_modules/lehre/bin/lehre"
+        end
+    },
+
+    -- vim-chatgpt
+    {
+        "yasu-code/vim-chatgpt",
+        commit = "nvim-add-refactor",
+        config = function()
+            vim.api.nvim_set_keymap("v", "<leader>rev", ":<C-u>Review<CR>", { noremap = true, silent = true })
+        end
+    },
+
+    -- nvim-web-devicons
+    {
+        "nvim-tree/nvim-web-devicons"
+    },
+
+    -- barbar.nvim
+    {
+        "romgrk/barbar.nvim",
+        config = function()
+            vim.api.nvim_set_keymap("n", "<leader>bn", ":BufferNext<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "<leader>bp", ":BufferPrevious<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "<leader>bc", ":BufferClose<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "<leader>br", ":BufferRestore<CR>", { noremap = true, silent = true })
+        end
+    },
+
+    -- nvim-colorizer.lua
+    {
+        "norcalli/nvim-colorizer.lua"
+    }
+}
