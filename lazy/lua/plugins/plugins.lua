@@ -1,11 +1,31 @@
 return {
     {
-        "preservim/nerdtree",
-        keys = {
-            { "<leader>n", "<cmd>NERDTreeFocus<CR>", desc = "Focus NERDTree" },
-            { "<C-n>", "<cmd>NERDTreeToggle<CR>", desc = "Toggle NERDTree" },
-            { "<C-f>", "<cmd>NERDTreeFind<CR>", desc = "Find in NERDTree" },
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons",
+            "MunifTanjim/nui.nvim",
         },
+        config = function()
+            require("neo-tree").setup({
+                filesystem = {
+                    follow_current_file = true,
+                    use_libuv_file_watcher = true,
+                },
+                window = {
+                    width = 30,
+                    mappings = {
+                        ["<space>"] = "none",
+                    },
+                },
+            })
+
+            -- キーマッピングを設定
+            vim.api.nvim_set_keymap("n", "<leader>n", "<cmd>Neotree focus<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "<C-n>", "<cmd>Neotree toggle<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "<C-f>", "<cmd>Neotree reveal<CR>", { noremap = true, silent = true })
+        end,
     },
     {
         "nathanaelkane/vim-indent-guides",
@@ -209,15 +229,6 @@ return {
         end
     },
 
-    -- vim-chatgpt
-    {
-        "yasu-code/vim-chatgpt",
-        commit = "nvim-add-refactor",
-        config = function()
-            vim.api.nvim_set_keymap("v", "<leader>rev", ":<C-u>Review<CR>", { noremap = true, silent = true })
-        end
-    },
-
     -- nvim-web-devicons
     {
         "nvim-tree/nvim-web-devicons"
@@ -237,5 +248,38 @@ return {
     -- nvim-colorizer.lua
     {
         "norcalli/nvim-colorizer.lua"
-    }
+    },
+    {
+        "akinsho/toggleterm.nvim",
+        version = "*",
+        config = function()
+            require("toggleterm").setup{
+                size = 100,
+                open_mapping = [[<c-t>]],
+                hide_numbers = true,
+                shade_filetypes = {},
+                shade_terminals = true,
+                shading_factor = 2,
+                start_in_insert = true,
+                insert_mappings = true,
+                persist_size = true,
+                direction = 'float',
+                close_on_exit = true,
+            }
+        end
+    },
+    {
+        "goolord/alpha-nvim",
+        -- dependencies = { 'echasnovski/mini.icons' },
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        config = function()
+            local startify = require("alpha.themes.startify")
+            -- available: devicons, mini, default is mini
+            -- if provider not loaded and enabled is true, it will try to use another provider
+            startify.file_icons.provider = "devicons"
+            require("alpha").setup(
+                startify.config
+            )
+        end,
+    },
 }
